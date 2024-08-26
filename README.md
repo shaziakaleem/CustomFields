@@ -45,6 +45,7 @@ Pros:
 
 Simplified Schema: Reduced number of columns in the CustomFieldValue table. Simpler schema and codebase easier to maintain.
 Uniform Querying: All custom field values can be queried uniformly without worrying about different data types or handling different columns for different types.
+
 Cons:
 
 Data Integrity: Storing everything as text sacrifices data integrity. For instance, numeric fields won't have the protection of the database ensuring they are actually numeric, and dates might be stored in an incorrect format without validation.
@@ -55,6 +56,7 @@ Increased Risk of Invalid Data: Since there is no strict enforcement at the data
 Pros:
 
 Simple Queries: You can have simpler SQL queries since all values are stored in one column and can be queried using a single column (value).
+
 Cons:
 
 Performance Overhead: Storing everything as text means that for numeric operations (e.g., sorting or filtering by a number range), the database has to cast text to the appropriate type, which adds overhead.
